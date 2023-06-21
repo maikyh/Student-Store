@@ -1,47 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function ProductCard({
-  product,
-  productId,
-  quantity,
-  handleAddItemToCart,
-  handleRemoveItemToCart,
-  showDescription,
-}) {
-  const { id, name, price, description, image } = product;
-
-  const formattedPrice = `$${price.toFixed(2)}`;
-
-  const handleAddToCart = () => {
-    handleAddItemToCart(id);
-  };
-
-  const handleRemoveFromCart = () => {
-    handleRemoveItemToCart(id);
-  };
-
+export function ProductCard(product) {
+  console.log(product.product);
+  product = product.product;
   return (
-    <div className="product-card">
-      <div className="media">
-        <Link to={`/products/${id}`}>
-          <img src={image} alt={name} />
-        </Link>
-      </div>
-      <div className="product-name">{name}</div>
-      <div className="product-price">{formattedPrice}</div>
-      {showDescription && (
-        <div className="product-description">{description}</div>
-      )}
-      <div className="product-quantity">{quantity > 0 && quantity}</div>
-      <div>
-        <button className="add" onClick={handleAddToCart}>
-          Add
-        </button>
-        <button className="remove" onClick={handleRemoveFromCart}>
-          Remove
-        </button>
+    <div className="card bg-white rounded-lg shadow-md">
+      <img
+        className="card-img-top"
+        src={product.image}
+        alt={product.name}
+        style={{ height: "200px", objectFit: "cover" }}
+      />
+      <div className="card-body">
+        <a href="#">
+          <h5 className="product-name card-title text-lg font-semibold text-gray-900">
+            {product.name}
+          </h5>
+        </a>
+        <div className="d-flex justify-content-between align-items-center mt-2.5">
+          <span className="product-price text-lg font-weight-bold text-gray-900">
+            ${product.price}
+          </span>
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default ProductCard;
