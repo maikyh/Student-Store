@@ -2,7 +2,7 @@ import * as React from "react"
 import "./Hero.css"
 import HouseLogo from "../../assets/student_store_icon.18e5d61a.svg";
 
-export default function Navbar() {
+export default function Hero() {
   return (
     <div className="hero">
         <div className="content">
