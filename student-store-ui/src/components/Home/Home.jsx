@@ -3,6 +3,7 @@ import "./Home.css"
 import Hero from "../Hero/Hero"
 import ProductGrid from "../ProductGrid/ProductGrid"
 import About from "../About/About"
+import Contact from "../Contact/Contact"
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero/>
       <ProductGrid/>
       <About/>
+      <Contact/>
     </div>
   )
 }

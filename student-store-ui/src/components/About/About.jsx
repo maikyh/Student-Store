@@ -14,7 +14,7 @@ const AboutSection = () => {
               className="about-image"
             />
           </div>
-          <div className="col-lg-9">
+          <div className="col-lg-9 d-flex flex-column justify-content-start align-items-end">
             <h2 className="about-title">About Us</h2>
             <p className="about-description">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
