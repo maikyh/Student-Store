@@ -8,7 +8,6 @@ export default function Home() {
     <div className="home">
       <Hero/>
       <ProductGrid/>
-      <p>Home</p>
     </div>
   )
 }
