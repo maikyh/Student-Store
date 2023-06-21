@@ -5,12 +5,13 @@ import CodePathLogo from "../../assets/codepath.f1b3e41a.svg";
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <div className="logo">
-        <a href="/">
-          <img src={CodePathLogo} alt="codepath logo" /> 
-        </a>
+      <div className="content">
+        <div className="logo">
+          <a href="/">
+            <img src={CodePathLogo} alt="codepath logo" /> 
+          </a>
+        </div>
       </div>
-      <p>Navbar</p>
     </nav>
   )
 }

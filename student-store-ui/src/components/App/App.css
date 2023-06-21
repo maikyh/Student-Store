@@ -1,3 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+a, span, div, p, h1, h2, h3, h4, h5, h6, ul, ol {
+  margin: 0;
+  padding: 0;
+  color:  #212121;
+}
+
 .app {
   width: 100%;
   max-width: 100vw;
@@ -6,6 +16,7 @@
   display: flex;
   flex-direction: row;
 }
+
 .app main {
   width: 100%;
   max-width: 100vw;
