@@ -5,8 +5,8 @@ import "./ProductGrid.css";
 
 const products = dataProducts.products;
 
-export default function ProductGrid() {
-  console.log(products);
+export default function ProductGrid({ selectedCategory }) {
+  console.log(selectedCategory);
   return (
     <div className="mx-auto product-grid">
       <div className="row">

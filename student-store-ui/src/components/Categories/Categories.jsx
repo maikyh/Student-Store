@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Categories.css";
 
-export default function Categories() {
-  const [selectedCategory, setSelectedCategory] = useState("All Categories");
+export default function Categories({ selectedCategory, onCategoryChange }) {
+  const categories = ["All Categories", "Clothing", "Food", "Accessories", "Tech"];
 
   const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
+    onCategoryChange(category);
   };
-
-  const categories = ["All Categories", "Clothing", "Food", "Accessories", "Tech"];
 
   return (
     <div className="container">
