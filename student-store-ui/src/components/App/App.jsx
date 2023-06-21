@@ -3,7 +3,6 @@ import { BrowserRouter } from 'react-router-dom'
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
-import Hero from "../Hero/Hero"
 import "./App.css"
 
 export default function App() {
@@ -13,7 +12,6 @@ export default function App() {
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar />
-          <Hero></Hero>
           <Sidebar />
           <Home />
         </main>
