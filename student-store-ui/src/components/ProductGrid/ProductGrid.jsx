@@ -28,7 +28,6 @@ export default function ProductGrid({ selectedCategory, searchQuery }) {
     currentProducts = products;
   }
 
-  console.log(searchQuery);
   if (searchQuery) {
     currentProducts = currentProducts.filter((product) =>
       product.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -36,8 +35,8 @@ export default function ProductGrid({ selectedCategory, searchQuery }) {
   }
 
   return (
-    <div className="mx-auto product-grid">
-      <div className="row">
+    <div className="container product-grid">
+      <div className="row justify-content-start">
         {currentProducts?.map((product) => (
           <div className="col-md-3" key={product.id}>
             <ProductCard product={product} />
