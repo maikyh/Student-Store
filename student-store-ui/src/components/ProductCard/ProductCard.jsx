@@ -17,8 +17,9 @@ export function ProductCard({ product, onClick, onClose, largeView }) {
   console.log(product);
 
   return (
-    <div className="card bg-white rounded-lg shadow-md" onClick={handleClick}>
+    <div className="card bg-white rounded-lg shadow-md mb-4">
       <img
+        onClick={handleClick}
         className="card-img-top"
         src={product.image}
         alt={product.name}
