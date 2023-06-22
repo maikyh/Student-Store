@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Search.css';
 
-const Search = () => {
+const Search = ({ onSearchQueryChange }) => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (event) => {
+    const query = event.target.value;
+    setSearchQuery(query);
+    onSearchQueryChange(query);
+  };
+
   return (
     <div className="search">
       <div className='content'>
@@ -13,6 +21,8 @@ const Search = () => {
                 type="text"
                 placeholder="Search..."
                 aria-label="Search"
+                value={searchQuery}
+                onChange={handleSearch}
               />
             </div>
           </div>

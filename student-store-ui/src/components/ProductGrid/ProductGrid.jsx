@@ -4,7 +4,7 @@ import "./ProductGrid.css";
 
 const url = `https://codepath-store-api.herokuapp.com/store`;
 
-export default function ProductGrid({ selectedCategory }) {
+export default function ProductGrid({ selectedCategory, searchQuery }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -26,6 +26,13 @@ export default function ProductGrid({ selectedCategory }) {
     currentProducts = products.filter((item) => item.category === selectedCategory);
   } else {
     currentProducts = products;
+  }
+
+  console.log(searchQuery);
+  if (searchQuery) {
+    currentProducts = currentProducts.filter((product) =>
+      product.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
   }
 
   return (
