@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export function ProductCard({ product, onClick, onClose, largeView }) {
+export function ProductCard({ product, onSetCounter, onProductAdded, onClick, onClose, largeView}) {
   const handleClick = () => {
     if (onClick) {
       onClick(product.id);
@@ -13,6 +13,22 @@ export function ProductCard({ product, onClick, onClose, largeView }) {
       onClose();
     }
   };
+
+  const [counter, setCounter] = useState(0);
+
+  const addToCart = () => {
+    onProductAdded();
+    setCounter(counter + 1);
+    onSetCounter(counter + 1);
+  }
+
+  const removeToCart = () => {
+    if(counter > 0){
+      onProductAdded();
+      setCounter(counter - 1);
+      onSetCounter(counter - 1);
+    }
+  }
 
   console.log(product);
 
@@ -47,8 +63,14 @@ export function ProductCard({ product, onClick, onClose, largeView }) {
           </button>
         </div>
       )}
+      <button onClick={addToCart}>+</button>
+      <button onClick={removeToCart}>-</button>
+      {counter > 0 && <p>{counter}</p> }
+
     </div>
   );
 }
 
 export default ProductCard;
+
+

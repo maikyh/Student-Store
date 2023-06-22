@@ -8,6 +8,9 @@ const url = `https://codepath-store-api.herokuapp.com/store`;
 export default function ProductGrid({ selectedCategory, searchQuery }) {
   const [products, setProducts] = useState([]);
   const [selectedProductId, setSelectedProductId] = useState(null);
+  const [productAdded, setProductedAdded] = useState(null);
+  const [costOfProductAdded, setCostOfProductedAdded] = useState(null);
+  const [counter, setCounter] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -44,15 +47,24 @@ export default function ProductGrid({ selectedCategory, searchQuery }) {
     setSelectedProductId(null);
   };
 
+  const handleSetProductedAdded = (currentProductAdded) => {
+    setProductedAdded(currentProductAdded.name);
+    setCostOfProductedAdded(currentProductAdded.price);
+  };
+
+  const handleSetCounter = (count) => {
+    setCounter(count);
+  };
+
   return (
     <div>
-      <Sidebar/>
+      <Sidebar name ={productAdded} price ={costOfProductAdded} quantity={counter}/>
       <div className="container product-grid">
         {!selectedProductId && (
           <div className="row justify-content-start">
             {currentProducts?.map((product) => (
               <div className="col-md-3" key={product.id}>
-                <ProductCard product={product} onClick={() => handleProductClick(product.id)} />
+                <ProductCard product={product} onSetCounter={handleSetCounter} onProductAdded={() => handleSetProductedAdded(product)} onClick={() => handleProductClick(product.id)} />
               </div>
             ))}
           </div>

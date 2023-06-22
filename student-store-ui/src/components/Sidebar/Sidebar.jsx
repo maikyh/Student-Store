@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
 
-const Sidebar = () => {
+export function Sidebar({name, price, quantity}) {
   const [expanded, setExpanded] = useState(false);
 
   const handleButtonClick = () => {
@@ -13,6 +13,15 @@ const Sidebar = () => {
       <button className="expand-button" onClick={handleButtonClick}>
         Expand
       </button>
+      <div>
+        {name}
+      </div>
+      <div>
+        {quantity}
+      </div>
+      <div>
+        {price}
+      </div>
     </div>
   );
 };
