@@ -6,6 +6,7 @@ const url = `https://codepath-store-api.herokuapp.com/store`;
 
 export default function ProductGrid({ selectedCategory, searchQuery }) {
   const [products, setProducts] = useState([]);
+  const [selectedProductId, setSelectedProductId] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,15 +35,37 @@ export default function ProductGrid({ selectedCategory, searchQuery }) {
     );
   }
 
+  const handleProductClick = (productId) => {
+    setSelectedProductId(productId);
+  };
+
+  const handleProductClose = () => {
+    setSelectedProductId(null);
+  };
+
   return (
     <div className="container product-grid">
-      <div className="row justify-content-start">
-        {currentProducts?.map((product) => (
-          <div className="col-md-3" key={product.id}>
-            <ProductCard product={product} />
+      {!selectedProductId && (
+        <div className="row justify-content-start">
+          {currentProducts?.map((product) => (
+            <div className="col-md-3" key={product.id}>
+              <ProductCard product={product} onClick={() => handleProductClick(product.id)} />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {selectedProductId && (
+        <div className="row justify-content-center">
+          <div className="col-md-6">
+            <ProductCard
+              product={products.find((product) => product.id === selectedProductId)}
+              onClose={handleProductClose}
+              largeView
+            />
           </div>
-        ))}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
