@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../ProductCard/ProductCard";
+import Sidebar from "../Sidebar/Sidebar";
 import "./ProductGrid.css";
 
 const url = `https://codepath-store-api.herokuapp.com/store`;
@@ -44,28 +45,31 @@ export default function ProductGrid({ selectedCategory, searchQuery }) {
   };
 
   return (
-    <div className="container product-grid">
-      {!selectedProductId && (
-        <div className="row justify-content-start">
-          {currentProducts?.map((product) => (
-            <div className="col-md-3" key={product.id}>
-              <ProductCard product={product} onClick={() => handleProductClick(product.id)} />
-            </div>
-          ))}
-        </div>
-      )}
-
-      {selectedProductId && (
-        <div className="row justify-content-center">
-          <div className="col-md-6">
-            <ProductCard
-              product={products.find((product) => product.id === selectedProductId)}
-              onClose={handleProductClose}
-              largeView
-            />
+    <div>
+      <Sidebar/>
+      <div className="container product-grid">
+        {!selectedProductId && (
+          <div className="row justify-content-start">
+            {currentProducts?.map((product) => (
+              <div className="col-md-3" key={product.id}>
+                <ProductCard product={product} onClick={() => handleProductClick(product.id)} />
+              </div>
+            ))}
           </div>
-        </div>
-      )}
+        )}
+
+        {selectedProductId && (
+          <div className="row justify-content-center">
+            <div className="col-md-6">
+              <ProductCard
+                product={products.find((product) => product.id === selectedProductId)}
+                onClose={handleProductClose}
+                largeView
+                />
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
