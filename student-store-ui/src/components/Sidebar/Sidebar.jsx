@@ -1,9 +1,20 @@
-import * as React from "react";
-import "./Sidebar.css";
+import React, { useState } from 'react';
+import './Sidebar.css';
 
-export default function Sidebar() {
+const Sidebar = () => {
+  const [expanded, setExpanded] = useState(false);
+
+  const handleButtonClick = () => {
+    setExpanded(!expanded);
+  };
+
   return (
-    <section className="sidebar">
-    </section>
+    <div className={`sidebar ${expanded ? 'expanded' : ''}`}>
+      <button className="expand-button" onClick={handleButtonClick}>
+        Expand
+      </button>
+    </div>
   );
-}
+};
+
+export default Sidebar;
