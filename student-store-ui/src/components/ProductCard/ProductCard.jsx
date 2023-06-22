@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export function ProductCard({ product, onSetCounter, onProductAdded, onClick, onClose, largeView}) {
+export function ProductCard({handleRemoveItemToCart, handleAddItemToCart, product, onSetCounter, onProductAdded, onClick, onClose, largeView}) {
   const handleClick = () => {
     if (onClick) {
       onClick(product.id);
@@ -18,6 +18,7 @@ export function ProductCard({ product, onSetCounter, onProductAdded, onClick, on
 
   const addToCart = () => {
     onProductAdded();
+    handleAddItemToCart(product.id);
     setCounter(counter + 1);
     onSetCounter(counter + 1);
   }
@@ -25,12 +26,11 @@ export function ProductCard({ product, onSetCounter, onProductAdded, onClick, on
   const removeToCart = () => {
     if(counter > 0){
       onProductAdded();
+      handleRemoveItemToCart(product.id);
       setCounter(counter - 1);
       onSetCounter(counter - 1);
     }
   }
-
-  console.log(product);
 
   return (
     <div className="card bg-white rounded-lg shadow-md mb-4">

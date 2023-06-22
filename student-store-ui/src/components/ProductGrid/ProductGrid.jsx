@@ -10,7 +10,9 @@ export default function ProductGrid({ selectedCategory, searchQuery }) {
   const [selectedProductId, setSelectedProductId] = useState(null);
   const [productAdded, setProductedAdded] = useState(null);
   const [costOfProductAdded, setCostOfProductedAdded] = useState(null);
+  const [currentProductId, setCurrentProductId] = useState(null);
   const [counter, setCounter] = useState(null);
+  const [shoppingCart, setShoppingCart] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,21 +52,50 @@ export default function ProductGrid({ selectedCategory, searchQuery }) {
   const handleSetProductedAdded = (currentProductAdded) => {
     setProductedAdded(currentProductAdded.name);
     setCostOfProductedAdded(currentProductAdded.price);
+    setCurrentProductId(currentProductAdded.id);
   };
 
   const handleSetCounter = (count) => {
     setCounter(count);
   };
 
+  console.log(currentProducts[0]);
+
+  const handleAddItemToCart = (productId) => {
+    setShoppingCart((prev) => {
+      const newCart = { ...prev };
+      console.log(productId);
+      if (newCart[productId] === undefined) {
+        newCart[productId] = 1;
+      } else {
+        newCart[productId] = newCart[productId] + 1;
+      }
+      console.log("New cart: ", newCart);
+      return newCart;
+    });
+  };
+
+  const handleRemoveItemToCart = (productId) => {
+    setShoppingCart((prev) => {
+      const newCart = { ...prev };
+      console.log(productId);
+      if (newCart[productId] !== undefined) {
+        newCart[productId] = newCart[productId] - 1;
+      }
+      console.log("New cart: ", newCart);
+      return newCart;
+    });
+  };
+
   return (
     <div>
-      <Sidebar name ={productAdded} price ={costOfProductAdded} quantity={counter}/>
+      <Sidebar products={currentProducts} shoppingCart={shoppingCart}/>
       <div className="container product-grid">
         {!selectedProductId && (
           <div className="row justify-content-start">
             {currentProducts?.map((product) => (
               <div className="col-md-3" key={product.id}>
-                <ProductCard product={product} onSetCounter={handleSetCounter} onProductAdded={() => handleSetProductedAdded(product)} onClick={() => handleProductClick(product.id)} />
+                <ProductCard handleRemoveItemToCart={handleRemoveItemToCart} handleAddItemToCart={handleAddItemToCart} product={product} onSetCounter={handleSetCounter} onProductAdded={() => handleSetProductedAdded(product)} onClick={() => handleProductClick(product.id)} />
               </div>
             ))}
           </div>
