@@ -63,9 +63,19 @@ export function ProductCard({handleRemoveItemToCart, handleAddItemToCart, produc
           </button>
         </div>
       )}
-      <button onClick={addToCart}>+</button>
-      <button onClick={removeToCart}>-</button>
-      {counter > 0 && <p>{counter}</p> }
+
+      <div className="d-flex justify-content-between align-items-center">
+        <div>
+          <button className="btn btn-primary" onClick={addToCart}>
+            +
+          </button>
+          <button className="btn btn-danger" onClick={removeToCart}>
+            -
+          </button>
+        </div>
+        {counter > 0 && <p>{counter}</p>}
+      </div>
+
 
     </div>
   );

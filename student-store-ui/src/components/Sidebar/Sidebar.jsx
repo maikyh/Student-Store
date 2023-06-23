@@ -25,7 +25,7 @@ export function Sidebar({products, shoppingCart}) {
         Expand
       </button>
       <div>
-        {options}
+        {expanded && options}
       </div>
     </div>
   );
