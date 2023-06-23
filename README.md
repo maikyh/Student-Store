@@ -38,7 +38,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 
 - Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-The last lab was the one that helped me the most. Here, I learned how to fetch movies and call APIs. Thanks to this, I felt prepared to complete all core and stretch features.
+Lab 1 (Fast Food Feud) was the most helpful to me because it provided a recap of what React is and why it exists. It helped me remember how to create components and utilize hooks, specifically the useState hook. I used this hook extensively throughout my weekly project. It was necessary to re-render components whenever I clicked on a category, as the product grid needed to display products from that specific category. The same applied to the search bar. Overall, this lab was incredibly useful. Although I initially had some difficulties learning to use useState, it took me no more than an hour to grasp it and incorporate it into my website. I would love to give a shoutout to that hook as it was the key to successfully implementing all the core and stretch features on time!
 
 - If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
