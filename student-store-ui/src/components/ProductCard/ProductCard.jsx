@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import "./ProductCard.css";
 
 export function ProductCard({shoppingCart, handleRemoveItemToCart, handleAddItemToCart, product, onSetCounter, onProductAdded, onClick, onClose, largeView}) {
