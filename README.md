@@ -26,7 +26,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [x] Users can click the '+' button on a product cart to increment that product in the shopping cart.
 - [x] Users can click the '-' button on a product cart to decrement that product in the shopping cart.
 - [x] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] Your choice! (Replace this bullet explaining what you implemented. Example: Users can leave ratings for products they have purchased.)
+- [x] Users can click on the "Most Expensive" category to view all products sorted by price in descending order.
 
 ## *Week 3* Application Features
 
