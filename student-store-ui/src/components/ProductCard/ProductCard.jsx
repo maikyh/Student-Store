@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "./ProductCard.css";
 
 export function ProductCard({shoppingCart, handleRemoveItemToCart, handleAddItemToCart, product, onSetCounter, onProductAdded, onClick, onClose, largeView}) {
   const handleClick = () => {
@@ -66,18 +67,21 @@ export function ProductCard({shoppingCart, handleRemoveItemToCart, handleAddItem
       )}
 
       {!largeView && (
-        <div className="d-flex justify-content-between align-items-center">
-        <div>
-          <button className="btn btn-primary" onClick={addToCart}>
-            +
-          </button>
-          <button className="btn btn-danger" onClick={removeToCart}>
-            -
-          </button>
+        <div className="d-flex justify-content-between align-items-center cart-section">
+          <div>
+            <button className="btn btn-primary cart-button" onClick={addToCart}>
+              +
+            </button>
+            <button className="btn btn-danger cart-button" onClick={removeToCart}>
+              -
+            </button>
+          </div>
+          {shoppingCart[product.id] > 0 && (
+            <p className="cart-item-count">{shoppingCart[product.id]}</p>
+          )}
         </div>
-        {shoppingCart[product.id] > 0 && <p>{shoppingCart[product.id]}</p>}
-      </div>
       )}
+
     </div>
   );
 }
