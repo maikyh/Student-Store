@@ -65,7 +65,8 @@ export function ProductCard({handleRemoveItemToCart, handleAddItemToCart, produc
         </div>
       )}
 
-      <div className="d-flex justify-content-between align-items-center">
+      {!largeView && (
+        <div className="d-flex justify-content-between align-items-center">
         <div>
           <button className="btn btn-primary" onClick={addToCart}>
             +
@@ -76,8 +77,7 @@ export function ProductCard({handleRemoveItemToCart, handleAddItemToCart, produc
         </div>
         {counter > 0 && <p>{counter}</p>}
       </div>
-
-
+      )}
     </div>
   );
 }
