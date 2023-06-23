@@ -10,6 +10,12 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - Add several products to the shopping cart.
 - Checkout and view the final receipt.
 
+### Walkthrough Video
+
+<a href="https://www.loom.com/share/f69c41c46ee04f1987b68c33d997ff15">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/f69c41c46ee04f1987b68c33d997ff15-with-play.gif">
+</a>
+
 ## *Week 2* Application Features
 
 ### Core Features
@@ -27,6 +33,20 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [x] Users can click the '-' button on a product cart to decrement that product in the shopping cart.
 - [x] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [x] Users can click on the "Most Expensive" category to view all products sorted by price in descending order.
+
+## Reflection
+
+- Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
+
+The last lab was the one that helped me the most. Here, I learned how to fetch movies and call APIs. Thanks to this, I felt prepared to complete all core and stretch features.
+
+- If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
+  
+If I had more time, I would add more information to the pop-ups, make them more aesthetically pleasing, and use a database instead of arrays to retrieve movie information.
+
+- Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+
+I really liked the final result, and I feel proud that I completed all the features on time. However, next time, I will manage my time better to improve its performance and also focus on enhancing the quality of the code. 
 
 ## *Week 3* Application Features
 
