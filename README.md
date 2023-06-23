@@ -1,4 +1,4 @@
-## Week 1 Assignment: Student Store Project
+## Week 2 Assignment: Student Store Project
 
 Submitted by: **Miguel Angel Garza Carranza - maiky@meta.com**
 
