@@ -17,6 +17,7 @@ export function ProductCard({handleRemoveItemToCart, handleAddItemToCart, produc
   const [counter, setCounter] = useState(0);
 
   const addToCart = () => {
+    console.log("wtf");
     onProductAdded();
     handleAddItemToCart(product.id);
     setCounter(counter + 1);

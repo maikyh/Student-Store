@@ -89,7 +89,7 @@ export default function ProductGrid({ selectedCategory, searchQuery }) {
 
   return (
     <div>
-      <Sidebar products={currentProducts} shoppingCart={shoppingCart}/>
+      <Sidebar products={products} shoppingCart={shoppingCart}/>
       <div className="container product-grid">
         {!selectedProductId && (
           <div className="row justify-content-start">
