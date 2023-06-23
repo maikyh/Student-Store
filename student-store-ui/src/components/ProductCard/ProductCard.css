@@ -2,9 +2,6 @@
     padding: 0;
   }
   
-  .cart-section {
-    margin-top: 0.5rem;
-  }
   
   .cart-button {
     padding: 0.3rem 0.5rem;
@@ -15,6 +12,14 @@
   .cart-item-count {
     font-size: 1rem;
     font-weight: bold;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-right: 0.5rem;
     margin-left: 0.5rem;
+    background-color: #ff9017;
+    color: #ffffff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
   }
+
   
