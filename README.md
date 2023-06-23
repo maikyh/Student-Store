@@ -52,7 +52,7 @@ Lastly, I would reintroduce the "Most Expensive" category as a filtering option 
 
 - Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-I really liked the final result, and I feel proud that I completed all the features on time. However, next time, I will manage my time better to improve its performance and also focus on enhancing the quality of the code. 
+I loved the final result since this time I managed my time much better. As a result, I was able to recheck the code for irregularities, bugs, and other issues. I thoroughly enjoyed learning new technologies and frameworks, particularly React and useState. Even though I would have loved to add the three minimal features I mentioned earlier, I am overall satisfied with the project. Moving forward, my focus in the next week's project will be on the quality of the code. I realized that as I added more lines, it became increasingly challenging to maintain and understand the code. To overcome this, I will plan to dedicate time to establish a clear structure from the beginning. This will help me avoid unforeseen issues during the project's development phase.
 
 ## *Week 3* Application Features
 
