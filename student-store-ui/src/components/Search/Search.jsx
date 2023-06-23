@@ -31,8 +31,8 @@ const Search = ({ onSearchQueryChange }) => {
               />
             </div>
           </div>
-          <div className="col-md-6 d-flex justify-content-center align-items-center">
-            <button className="btn btn-success" type="button" onClick={handleClearInput}>
+          <div className="col-md-6 d-flex justify-content-center align-items-center mt-3">
+            <button className="btn btn-success custom-btn" type="button" onClick={handleClearInput}>
               Home
             </button>
           </div>

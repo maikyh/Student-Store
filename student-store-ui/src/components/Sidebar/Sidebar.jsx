@@ -67,7 +67,7 @@ export function Sidebar({ products, shoppingCart }) {
               <th>Product</th>
               <th>Quantity</th>
               <th>Price</th>
-              <th>Subtotal</th>
+              <th>Cost</th>
             </tr>
           </thead>
           <tbody>{tableRows}</tbody>
