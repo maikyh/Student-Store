@@ -10,6 +10,11 @@ const Search = ({ onSearchQueryChange }) => {
     onSearchQueryChange(query);
   };
 
+  const handleClearInput = () => {
+    setSearchQuery("");
+    onSearchQueryChange("");
+  };
+
   return (
     <div className="search">
       <div className='content'>
@@ -21,14 +26,14 @@ const Search = ({ onSearchQueryChange }) => {
                 type="text"
                 placeholder="Search..."
                 aria-label="Search"
-                value={searchQuery}
                 onChange={handleSearch}
+                value={searchQuery}
               />
             </div>
           </div>
           <div className="col-md-6 d-flex justify-content-center align-items-center">
-            <button className="btn btn-success" type="button">
-              My Cart
+            <button className="btn btn-success" type="button" onClick={handleClearInput}>
+              Home
             </button>
           </div>
         </div>
