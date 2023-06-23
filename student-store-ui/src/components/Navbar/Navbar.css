@@ -8,6 +8,7 @@
     flex-direction: row;
     align-items: center;
     padding: 0 40px;
+    justify-content: space-between;
 }
 
 .navbar .content {
@@ -17,9 +18,26 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 }
 
 .navbar .content .logo {
     width: 100px;
-    margin-right: 50px;
+    margin-right: auto;
 }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .nav-links li {
+    margin-right: 50px; 
+    margin-left: auto;
+  }
+  
+  .nav-links span {
+    color: #fff;
+  }
+  
