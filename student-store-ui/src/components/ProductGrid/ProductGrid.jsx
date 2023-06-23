@@ -29,7 +29,12 @@ export default function ProductGrid({ selectedCategory, searchQuery }) {
   }, []);
 
   let currentProducts;
-  if (selectedCategory !== "All Categories") {
+  if (selectedCategory === "Most Expensive"){
+    currentProducts = [...products];
+    currentProducts.sort(function(a, b) {
+      return b.price - a.price;
+    });
+  } else if (selectedCategory !== "All Categories") {
     currentProducts = products.filter((item) => item.category === selectedCategory);
   } else {
     currentProducts = products;
@@ -57,20 +62,16 @@ export default function ProductGrid({ selectedCategory, searchQuery }) {
 
   const handleSetCounter = (count) => {
     setCounter(count);
-  };
-
-  console.log(currentProducts[0]);
+  };  
 
   const handleAddItemToCart = (productId) => {
     setShoppingCart((prev) => {
       const newCart = { ...prev };
-      console.log(productId);
       if (newCart[productId] === undefined) {
         newCart[productId] = 1;
       } else {
         newCart[productId] = newCart[productId] + 1;
       }
-      console.log("New cart: ", newCart);
       return newCart;
     });
   };
@@ -78,11 +79,9 @@ export default function ProductGrid({ selectedCategory, searchQuery }) {
   const handleRemoveItemToCart = (productId) => {
     setShoppingCart((prev) => {
       const newCart = { ...prev };
-      console.log(productId);
       if (newCart[productId] !== undefined) {
         newCart[productId] = newCart[productId] - 1;
       }
-      console.log("New cart: ", newCart);
       return newCart;
     });
   };
