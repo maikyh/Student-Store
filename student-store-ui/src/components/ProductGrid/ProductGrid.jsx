@@ -95,7 +95,7 @@ export default function ProductGrid({ selectedCategory, searchQuery }) {
           <div className="row justify-content-start">
             {currentProducts?.map((product) => (
               <div className="col-md-3" key={product.id}>
-                <ProductCard handleRemoveItemToCart={handleRemoveItemToCart} handleAddItemToCart={handleAddItemToCart} product={product} onSetCounter={handleSetCounter} onProductAdded={() => handleSetProductedAdded(product)} onClick={() => handleProductClick(product.id)} />
+                <ProductCard shoppingCart={shoppingCart} handleRemoveItemToCart={handleRemoveItemToCart} handleAddItemToCart={handleAddItemToCart} product={product} onSetCounter={handleSetCounter} onProductAdded={() => handleSetProductedAdded(product)} onClick={() => handleProductClick(product.id)} />
               </div>
             ))}
           </div>

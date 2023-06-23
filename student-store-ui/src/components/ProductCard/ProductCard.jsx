@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export function ProductCard({handleRemoveItemToCart, handleAddItemToCart, product, onSetCounter, onProductAdded, onClick, onClose, largeView}) {
+export function ProductCard({shoppingCart, handleRemoveItemToCart, handleAddItemToCart, product, onSetCounter, onProductAdded, onClick, onClose, largeView}) {
   const handleClick = () => {
     if (onClick) {
       onClick(product.id);
@@ -20,16 +20,16 @@ export function ProductCard({handleRemoveItemToCart, handleAddItemToCart, produc
     console.log("wtf");
     onProductAdded();
     handleAddItemToCart(product.id);
-    setCounter(counter + 1);
-    onSetCounter(counter + 1);
+    setCounter(shoppingCart[product.id]  + 1);
+    onSetCounter(shoppingCart[product.id]  + 1);
   }
 
   const removeToCart = () => {
-    if(counter > 0){
+    if(shoppingCart[product.id]  > 0){
       onProductAdded();
       handleRemoveItemToCart(product.id);
-      setCounter(counter - 1);
-      onSetCounter(counter - 1);
+      setCounter(shoppingCart[product.id]  - 1);
+      onSetCounter(shoppingCart[product.id]  - 1);
     }
   }
 
@@ -75,7 +75,7 @@ export function ProductCard({handleRemoveItemToCart, handleAddItemToCart, produc
             -
           </button>
         </div>
-        {counter > 0 && <p>{counter}</p>}
+        {shoppingCart[product.id] > 0 && <p>{shoppingCart[product.id]}</p>}
       </div>
       )}
     </div>
