@@ -1,7 +1,8 @@
-.card-body{
-    padding-bottom: 0;
-}
-.cart-section {
+.card-body {
+    padding: 0;
+  }
+  
+  .cart-section {
     margin-top: 0.5rem;
   }
   
