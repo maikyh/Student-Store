@@ -6,7 +6,6 @@
     bottom: 0;
     left: 0;
     z-index: 100; 
-    transition: width 0.3s ease;
 }
 
 .sidebar.expanded {
@@ -24,7 +23,8 @@
 }
 
 .table-container {
-    width: 550px; /* Adjust the width as per your preference */
+    width: 550px;
     margin-left: auto;
     margin-right: auto;
+    transition: opacity 0.3s ease; 
 }
