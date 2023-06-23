@@ -56,7 +56,7 @@ export function Sidebar({ products, shoppingCart }) {
 
   return (
     <div className={`sidebar ${expanded ? 'expanded' : ''}`}>
-      <button className="expand-button btn btn-primary" onClick={handleButtonClick}>
+      <button className="expand-button btn btn-success" onClick={handleButtonClick}>
         {expanded ? 'Collapse' : 'Expand'}
       </button>
       {expanded && (
