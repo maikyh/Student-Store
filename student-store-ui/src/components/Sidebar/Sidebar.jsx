@@ -1,35 +1,57 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
 
-export function Sidebar({products, shoppingCart}) {
+export function Sidebar({ products, shoppingCart }) {
   const [expanded, setExpanded] = useState(false);
 
   const handleButtonClick = () => {
     setExpanded(!expanded);
   };
 
-  const options = [];
+  const tableRows = [];
   let subTotal = 0;
   let tax = 0;
   let total = 0;
   for (let i = 1; i <= 16; i++) {
-    if(shoppingCart[i]>0){
-      subTotal += products[i-1].price * shoppingCart[i];
-      options.push( 
-        <div>
-          {products[i-1].name} {shoppingCart[i]} {products[i-1].price} {products[i-1].price * shoppingCart[i]}
-        </div>
+    if (shoppingCart[i] > 0) {
+      const product = products[i - 1];
+      const quantity = shoppingCart[i];
+      const itemSubtotal = product.price * quantity;
+      subTotal += itemSubtotal;
+
+      tableRows.push(
+        <tr key={i}>
+          <td>{product.name}</td>
+          <td>{quantity}</td>
+          <td>${product.price.toFixed(2)}</td>
+          <td>${itemSubtotal.toFixed(2)}</td>
+        </tr>
       );
     }
   }
 
-  if(subTotal > 0) {
-    tax = subTotal * .0875;
+  if (subTotal > 0) {
+    tax = subTotal * 0.0875;
     total = subTotal + tax;
 
-    options.push( <div>{subTotal.toFixed(2)}</div> );
-    options.push( <div>{tax.toFixed(2)}</div> );
-    options.push( <div>{total.toFixed(2)}</div> );
+    tableRows.push(
+      <tr key="subtotal">
+        <td colSpan="3">Subtotal</td>
+        <td>${subTotal.toFixed(2)}</td>
+      </tr>
+    );
+    tableRows.push(
+      <tr key="tax">
+        <td colSpan="3">Tax</td>
+        <td>${tax.toFixed(2)}</td>
+      </tr>
+    );
+    tableRows.push(
+      <tr key="total">
+        <td colSpan="3">Total</td>
+        <td>${total.toFixed(2)}</td>
+      </tr>
+    );
   }
 
   return (
@@ -37,11 +59,21 @@ export function Sidebar({products, shoppingCart}) {
       <button className="expand-button" onClick={handleButtonClick}>
         Expand
       </button>
-      <div>
-        {expanded && options}
-      </div>
+      {expanded && (
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>{tableRows}</tbody>
+        </table>
+      )}
     </div>
   );
-};
+}
 
 export default Sidebar;
