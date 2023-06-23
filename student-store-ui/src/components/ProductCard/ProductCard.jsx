@@ -53,7 +53,7 @@ export function ProductCard({shoppingCart, handleRemoveItemToCart, handleAddItem
         </div>}
         <div className="d-flex justify-content-between align-items-center mt-2.5">
           <span className="product-price text-lg font-weight-bold text-gray-900">
-            ${product.price}
+            ${product.price.toFixed(2)}
           </span>
         </div>
       </div>
