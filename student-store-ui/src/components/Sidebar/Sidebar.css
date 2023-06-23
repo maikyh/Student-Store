@@ -6,7 +6,7 @@
     bottom: 0;
     left: 0;
     z-index: 100;
-    padding-right: 1px; /* Add a small padding on the right */
+    padding-right: 1px; 
 }
   
 .sidebar::after {
@@ -16,7 +16,7 @@
     bottom: 0;
     right: 0;
     width: 1px;
-    background-color: white; /* Set the color of the line */
+    background-color: white;  
 }
   
 
