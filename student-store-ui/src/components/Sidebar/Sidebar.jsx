@@ -56,12 +56,13 @@ export function Sidebar({ products, shoppingCart }) {
 
   return (
     <div className={`sidebar ${expanded ? 'expanded' : ''}`}>
-      <button className="expand-button" onClick={handleButtonClick}>
-        Expand
+      <button className="expand-button btn btn-primary" onClick={handleButtonClick}>
+        {expanded ? 'Collapse' : 'Expand'}
       </button>
       {expanded && (
-        <table className="table">
-          <thead>
+        <div className="table-container">
+        <table className="table table-striped mt-3">
+          <thead className="thead-dark">
             <tr>
               <th>Product</th>
               <th>Quantity</th>
@@ -71,6 +72,7 @@ export function Sidebar({ products, shoppingCart }) {
           </thead>
           <tbody>{tableRows}</tbody>
         </table>
+        </div>
       )}
     </div>
   );
