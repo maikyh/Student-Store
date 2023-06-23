@@ -42,7 +42,12 @@ Lab 1 (Fast Food Feud) was the most helpful to me because it provided a recap of
 
 - If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-If I had more time, I would add more information to the pop-ups, make them more aesthetically pleasing, and use a database instead of arrays to retrieve movie information.
+If I had more time, I would add three minimal yet highly functional features to my project:
+Firstly, I would include a button in the shopping cart that, when clicked, instantly clears all previously added products. This would be convenient for users who have an expanded sidebar and want to remove all items at once.
+
+Secondly, I would implement a popup notification that appears in the bottom right corner whenever a product is added to the shopping cart. The popup would display a message like "Product added" and show an image of the other products already in the cart. It would provide a visual confirmation without including details such as price, total, subtotal, or taxes, focusing solely on the products and quantities.
+
+Lastly, I would reintroduce the "Most Expensive" category as a filtering option within each component. This filter would allow users to view products within a specific category (e.g., tech) but sorted by their price in either ascending or descending order. It would provide an additional way for users to explore and compare products based on their prices.
 
 - Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
