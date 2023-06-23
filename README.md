@@ -1,6 +1,10 @@
-# Week 1 Assignment: Student Store Project
+## Week 1 Assignment: Student Store Project
 
-Submitted by: Miguel Angel Garza Carranza - maiky@meta.com
+Submitted by: **Miguel Angel Garza Carranza - maiky@meta.com**
+
+Estimated time spent: **13** hours spent in total
+
+### About
 
 Selling merchandise in the modern era requires digital solutions. For this project, you'll be tasked with designing and constructing an online student store for the College of CodePath. The web app consists of a frontend user interface for potential customers to browse available goods and a backend API to handle data management. The API will be built with Node and Express, and the UI will be built with React.
 
