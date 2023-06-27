@@ -71,17 +71,25 @@ export function Sidebar({ products, shoppingCart }) {
       {expanded && (
         <div className="table-container">
           <h1 className='text-center text-white mt-1'>Shopping Cart</h1>
-          <table className="table table-striped mt-3">
-            <thead className="thead-dark">
-              <tr>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Cost</th>
-              </tr>
-            </thead>
-            <tbody>{tableRows}</tbody>
-          </table>
+          
+          {
+            tableRows.length > 1 && 
+            <table className="table table-striped mt-3">
+              <thead className="thead-dark">
+                <tr>
+                  <th>Product</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Cost</th>
+                </tr>
+              </thead>
+              <tbody>{tableRows}</tbody>
+            </table>
+          }
+          {
+            tableRows.length <= 1 && 
+            <p className='mt-3 text-center text-white'>No items added to cart yet. Start shopping now!</p>
+          }
 
           <h1 className='text-center text-white mt-1'>Payment Info</h1>
           <form action="">
