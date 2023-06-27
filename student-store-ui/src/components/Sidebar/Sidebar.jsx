@@ -30,25 +30,34 @@ export function Sidebar({ products, shoppingCart }) {
     }
   }
 
+  tableRows.push(
+    <div className='mt-1    '></div>
+  )
+
   if (subTotal > 0) {
     tax = subTotal * 0.0875;
     total = subTotal + tax;
 
     tableRows.push(
       <tr key="subtotal">
-        <td colSpan="3">Subtotal</td>
+        <td className='fw-bold' colSpan="3">Subtotal</td>
         <td>${subTotal.toFixed(2)}</td>
       </tr>
     );
     tableRows.push(
       <tr key="tax">
-        <td colSpan="3">Tax</td>
+        <td className='fw-bold' colSpan="3">Tax</td>
         <td>${tax.toFixed(2)}</td>
       </tr>
     );
+
+    tableRows.push(
+      <div className='mt-1'></div>
+    )
+
     tableRows.push(
       <tr key="total">
-        <td colSpan="3">Total</td>
+        <td className='fw-bold' colSpan="3">Total</td>
         <td>${total.toFixed(2)}</td>
       </tr>
     );
@@ -76,18 +85,18 @@ export function Sidebar({ products, shoppingCart }) {
 
           <h1 className='text-center text-white mt-1'>Payment Info</h1>
           <form action="">
-          <div class="form-group text-white">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="User Name"/>
-          </div>
-          <div class="form-group text-white mt-1">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="user@meta.com"/>
-          </div>
-          <div class="">
-            <button type="submit" class="btn btn-outline-success mt-3 text-white border-white">Checkout</button>
-          </div>
-        </form>
+            <div class="form-group text-white">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="User Name"/>
+            </div>
+            <div class="form-group text-white mt-1">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="user@meta.com"/>
+            </div>
+            <div class="">
+              <button type="submit" class="btn btn-outline-success mt-3 text-white border-white">Checkout</button>
+            </div>
+          </form>
           <h1 className='text-center text-white mt-1'>Checkout Info</h1>
           <p className='text-white'>A confirmation email will be sent to you so that you can confirm this order. Once you have confirmed the order, it will be delivered to your dorm room.</p>
         </div>
