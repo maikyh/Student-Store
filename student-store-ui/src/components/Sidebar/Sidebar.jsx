@@ -3,6 +3,20 @@ import './Sidebar.css';
 
 export function Sidebar({ products, shoppingCart }) {
   const [expanded, setExpanded] = useState(false);
+  const [checkout, setCheckout] = useState(null);
+  const [searchName, setSearchName] = useState("");
+  const [searchEmail, setSearchEmail] = useState("");
+  const [statusOfPayment, setStatusOfPayment] = useState(false);
+
+  const handleSetSearchName = (event) => {
+    const query = event.target.value;
+    if(statusOfPayment === false) setSearchName(query);
+  };
+
+  const handleSetSearchEmail = (event) => {
+    const query = event.target.value;
+    if(statusOfPayment === false) setSearchEmail(query);
+  };
 
   const handleButtonClick = () => {
     setExpanded(!expanded);
@@ -31,7 +45,7 @@ export function Sidebar({ products, shoppingCart }) {
   }
 
   tableRows.push(
-    <div className='mt-1    '></div>
+    <div className='mt-1'></div>
   )
 
   if (subTotal > 0) {
@@ -62,6 +76,22 @@ export function Sidebar({ products, shoppingCart }) {
       </tr>
     );
   }
+
+  const handleSetCheckout = (event) => {
+    event.preventDefault();
+    setCheckout({searchName, searchEmail, tableRows});
+    setStatusOfPayment(true);
+  };
+
+  const handleExit = (event) => {
+    event.preventDefault();
+    setCheckout(null);
+    setStatusOfPayment(false);
+    setSearchName("");
+    setSearchEmail("");
+  }
+
+  console.log(statusOfPayment)
 
   return (
     <div className={`sidebar ${expanded ? 'expanded' : ''}`}>
@@ -95,18 +125,30 @@ export function Sidebar({ products, shoppingCart }) {
           <form action="">
             <div class="form-group text-white">
               <label for="name">Name</label>
-              <input type="text" class="form-control" id="name" placeholder="User Name"/>
+              <input value={searchName} onChange={handleSetSearchName} type="text" class="form-control" id="name" placeholder="User Name"/>
             </div>
             <div class="form-group text-white mt-1">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="user@meta.com"/>
+              <input value={searchEmail} onChange={handleSetSearchEmail} type="email" class="form-control" id="email" placeholder="user@meta.com"/>
             </div>
             <div class="">
-              <button type="submit" class="btn btn-outline-success mt-3 text-white border-white">Checkout</button>
+              <button onClick={handleSetCheckout} type="submit" class="btn btn-outline-success mt-3 text-white border-white">Checkout</button>
             </div>
           </form>
           <h1 className='text-center text-white mt-1'>Checkout Info</h1>
-          <p className='text-white'>A confirmation email will be sent to you so that you can confirm this order. Once you have confirmed the order, it will be delivered to your dorm room.</p>
+
+          {
+            statusOfPayment && 
+            <div>
+              <h4 className='text-white'>Receipt</h4>
+              <p className='text-white'>Showing receipt for {searchName} available at {searchEmail}:</p>
+              <button onClick={handleExit} type="submit" class="btn btn-outline-success mt-3 text-white border-white">Exit</button>
+            </div>
+          }
+          {
+            !statusOfPayment &&
+            <p className='text-white'>A confirmation email will be sent to you so that you can confirm this order. Once you have confirmed the order, it will be delivered to your dorm room.</p>
+          }
         </div>
       )}
     </div>
