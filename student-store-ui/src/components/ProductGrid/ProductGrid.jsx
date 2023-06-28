@@ -86,9 +86,13 @@ export default function ProductGrid({ selectedCategory, searchQuery }) {
     });
   };
 
+  const handleClearShoppingCart = () => {
+    setShoppingCart({});
+  };
+
   return (
     <div>
-      <Sidebar products={products} shoppingCart={shoppingCart}/>
+      <Sidebar handleClearShoppingCart={handleClearShoppingCart} products={products} shoppingCart={shoppingCart}/>
       <div className="container product-grid">
         {!selectedProductId && (
           <div className="row justify-content-start">

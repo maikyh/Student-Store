@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
 
-export function Sidebar({ products, shoppingCart }) {
+export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
   const [expanded, setExpanded] = useState(false);
   const [checkout, setCheckout] = useState(null);
   const [searchName, setSearchName] = useState("");
@@ -10,12 +10,12 @@ export function Sidebar({ products, shoppingCart }) {
 
   const handleSetSearchName = (event) => {
     const query = event.target.value;
-    if(statusOfPayment === false) setSearchName(query);
+    setSearchName(query);
   };
 
   const handleSetSearchEmail = (event) => {
     const query = event.target.value;
-    if(statusOfPayment === false) setSearchEmail(query);
+    setSearchEmail(query);
   };
 
   const handleButtonClick = () => {
@@ -79,16 +79,17 @@ export function Sidebar({ products, shoppingCart }) {
 
   const handleSetCheckout = (event) => {
     event.preventDefault();
-    setCheckout({searchName, searchEmail, tableRows});
+    setCheckout({searchName, searchEmail, shoppingCart});
     setStatusOfPayment(true);
+    handleClearShoppingCart();
+    setSearchName("");
+    setSearchEmail("");
   };
 
   const handleExit = (event) => {
     event.preventDefault();
     setCheckout(null);
     setStatusOfPayment(false);
-    setSearchName("");
-    setSearchEmail("");
   }
 
   console.log(statusOfPayment)
@@ -141,8 +142,8 @@ export function Sidebar({ products, shoppingCart }) {
             statusOfPayment && 
             <div>
               <h4 className='text-white'>Receipt</h4>
-              <p className='text-white'>Showing receipt for {searchName} available at {searchEmail}:</p>
-              <button onClick={handleExit} type="submit" class="btn btn-outline-success mt-3 text-white border-white">Exit</button>
+              <p className='text-white'>Showing receipt for {checkout.searchName} available at {checkout.searchEmail}:</p>
+              <button onClick={handleExit} type="submit" class="btn btn-outline-success mt-3 text-white border-white">Continue</button>
             </div>
           }
           {
