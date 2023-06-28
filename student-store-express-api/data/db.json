@@ -145,5 +145,42 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 2
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        }
+      ],
+      "total": 3.7844999999999995,
+      "createdAt": "Wed Jun 28 2023 12:06:22 GMT-0700 (Pacific Daylight Time)",
+      "receipt": "Receipt #1, by user: John Doe. Total price: $3.78"
+    },
+    {
+      "id": 2,
+      "name": "Mikey",
+      "email": "mikey@example.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 2
+        },
+        {
+          "itemId": 2,
+          "quantity": 3
+        }
+      ],
+      "total": 7.047,
+      "createdAt": "Wed Jun 28 2023 12:17:59 GMT-0700 (Pacific Daylight Time)",
+      "receipt": "Receipt #2: User: Mikey. Total price: $7.05"
+    }
+  ]
 }

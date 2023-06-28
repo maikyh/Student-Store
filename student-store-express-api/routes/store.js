@@ -15,4 +15,14 @@ router.get("/:productId", (req,res) => {
     })
 });
 
+router.post("/", (req,res) => {
+    const { shoppingCart, user} = req.body;
+
+    const purchase = Store.createOrder({ user, shoppingCart });
+
+    res.status(201).json({
+        purchase
+    })
+});
+
 module.exports = router;
