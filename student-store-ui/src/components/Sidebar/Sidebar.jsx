@@ -7,6 +7,10 @@ export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
   const [searchName, setSearchName] = useState("");
   const [searchEmail, setSearchEmail] = useState("");
   const [statusOfPayment, setStatusOfPayment] = useState(false);
+  const [checkoutAPI, setCheckoutAPI] = useState({
+    shoppingCart: [],
+    user: []
+  });
 
   const handleSetSearchName = (event) => {
     const query = event.target.value;
@@ -34,7 +38,7 @@ export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
       const itemSubtotal = product.price * quantity;
       subTotal += itemSubtotal;
       
-      productsOnShoppingCart.push([quantity,product.name,product.price,itemSubtotal]);
+      productsOnShoppingCart.push([product.id,quantity,product.name,product.price,itemSubtotal]);
 
       tableRows.push(
         <tr key={i}>
@@ -83,6 +87,19 @@ export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
   const handleSetCheckout = (event) => {
     event.preventDefault();
     if(productsOnShoppingCart.length > 0 && searchName.length > 0 && searchEmail.length > 0){
+      const updatedCheckoutAPI = {
+        shoppingCart: productsOnShoppingCart.map(([id, quantity]) => ({
+          itemId: id,
+          quantity: quantity
+        })),
+        user: {
+          name: searchName,
+          email: searchEmail
+        }
+      };
+  
+      setCheckoutAPI(updatedCheckoutAPI);
+      
       setCheckout({searchName, searchEmail, productsOnShoppingCart});
       setStatusOfPayment(true);
       handleClearShoppingCart();
@@ -97,7 +114,7 @@ export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
     setStatusOfPayment(false);
   }
 
-  console.log(checkout)
+  console.log(checkoutAPI)
 
   return (
     <div className={`sidebar ${expanded ? 'expanded' : ''}`}>
@@ -150,7 +167,7 @@ export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
               <p className='text-white mb-1'>Showing receipt for {checkout.searchName} available at {checkout.searchEmail}:</p>
               {checkout.productsOnShoppingCart?.map((product) => (
                 <ul className="m-0">
-                  <li className='text-white'> {product[0]} {product[1]} purchased at a cost of ${product[2]} for a total cost of ${product[3]}.</li>
+                  <li className='text-white'> {product[1]} {product[2]} purchased at a cost of ${product[3]} for a total cost of ${product[4]}.</li>
                 </ul>
               ))}
               <button onClick={handleExit} type="submit" class="btn btn-outline-success mt-3 mb-3 text-white border-white">Continue</button>
