@@ -7,10 +7,6 @@ export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
   const [searchName, setSearchName] = useState("");
   const [searchEmail, setSearchEmail] = useState("");
   const [statusOfPayment, setStatusOfPayment] = useState(false);
-  const [checkoutAPI, setCheckoutAPI] = useState({
-    shoppingCart: [],
-    user: []
-  });
 
   const handleSetSearchName = (event) => {
     const query = event.target.value;
@@ -87,7 +83,7 @@ export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
   const handleSetCheckout = async (event) => {
     event.preventDefault();
     if(productsOnShoppingCart.length > 0 && searchName.length > 0 && searchEmail.length > 0){
-      const updatedCheckoutAPI = {
+      const checkoutAPI = {
         shoppingCart: productsOnShoppingCart.map(([id, quantity]) => ({
           itemId: id,
           quantity: quantity
@@ -97,16 +93,14 @@ export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
           email: searchEmail
         }
       };
-  
-      setCheckoutAPI(updatedCheckoutAPI);
-      
+
       try {
         const response = await fetch('http://localhost:3001/store', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(updatedCheckoutAPI)
+          body: JSON.stringify(checkoutAPI)
         });
 
         if (response.ok) {
@@ -132,8 +126,6 @@ export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
     setCheckout(null);
     setStatusOfPayment(false);
   }
-
-  console.log(checkoutAPI)
 
   return (
     <div className={`sidebar ${expanded ? 'expanded' : ''}`}>
