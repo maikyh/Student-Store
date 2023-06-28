@@ -6,12 +6,7 @@ import About from "../About/About";
 import Contact from "../Contact/Contact";
 
 export default function Home() {
-  const [selectedCategory, setSelectedCategory] = useState("All Categories");
   const [searchQuery, setSearchQuery] = useState("");
-
-  const handleCategoryChange = (category) => {
-    setSelectedCategory(category);
-  };
 
   const handleSearchQueryChange = (query) => {
     setSearchQuery(query);
@@ -20,7 +15,7 @@ export default function Home() {
   return (
     <div className="home">
       <Hero />
-      <OrderGrid/>
+      <OrderGrid searchQuery={searchQuery}/>
       <About />
       <Contact />
     </div>
