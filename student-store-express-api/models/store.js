@@ -69,7 +69,6 @@ class Store {
             throw new BadRequestError(error);
         }
     }
-
 }
 
 module.exports = Store;
