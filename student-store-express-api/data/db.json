@@ -496,6 +496,24 @@
       "total": 2316.3315,
       "createdAt": "Wed Jun 28 2023 15:20:57 GMT-0700 (Pacific Daylight Time)",
       "receipt": "Receipt #27: User: mikey. Total price: $2316.33"
+    },
+    {
+      "id": 28,
+      "name": "Mikey",
+      "email": "mikey@example.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 2
+        },
+        {
+          "itemId": 2,
+          "quantity": 3
+        }
+      ],
+      "total": 7.047,
+      "createdAt": "Wed Jun 28 2023 15:38:09 GMT-0700 (Pacific Daylight Time)",
+      "receipt": "Receipt #28: User: Mikey. Total: $7.05"
     }
   ]
 }

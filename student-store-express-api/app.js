@@ -7,16 +7,15 @@ const { NotFoundError } = require('./utils/errors')
 app.use(morgan("tiny"))
 app.use(express.json())
 
-app.use(
-    cors()
-)
+app.use(cors())
 
 app.get("/", async (req, res) => {
-    res.json({ ping1: "pong2" })
+    res.json({ ping: "pong" })
 })
 
 // Routes
 app.use("/store", require("./routes/store"));
+app.use("/orders", require("./routes/orders"));
 
 // 404 error handling middleware
 app.use((req, res, next) => {

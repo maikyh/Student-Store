@@ -53,6 +53,23 @@ class Store {
             throw new BadRequestError(error);
         }
     }
+
+    static fetchOrders() {
+        try {
+            return storage.get("purchases").value();
+        } catch (error) {
+            throw new BadRequestError(error);
+        }
+    }
+
+    static fetchOrder(id) {
+        try {
+            return storage.get("purchases").find({ id: Number(id) }).value();
+        } catch (error) {
+            throw new BadRequestError(error);
+        }
+    }
+
 }
 
 module.exports = Store;
