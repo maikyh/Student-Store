@@ -82,11 +82,13 @@ export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
 
   const handleSetCheckout = (event) => {
     event.preventDefault();
-    setCheckout({searchName, searchEmail, productsOnShoppingCart});
-    setStatusOfPayment(true);
-    handleClearShoppingCart();
-    setSearchName("");
-    setSearchEmail("");
+    if(productsOnShoppingCart.length > 0 && searchName.length > 0 && searchEmail.length > 0){
+      setCheckout({searchName, searchEmail, productsOnShoppingCart});
+      setStatusOfPayment(true);
+      handleClearShoppingCart();
+      setSearchName("");
+      setSearchEmail("");
+    }
   };
 
   const handleExit = (event) => {
@@ -151,7 +153,7 @@ export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
                   <li className='text-white'> {product[0]} {product[1]} purchased at a cost of ${product[2]} for a total cost of ${product[3]}.</li>
                 </ul>
               ))}
-              <button onClick={handleExit} type="submit" class="btn btn-outline-success mt-3 text-white border-white">Continue</button>
+              <button onClick={handleExit} type="submit" class="btn btn-outline-success mt-3 mb-3 text-white border-white">Continue</button>
             </div>
           }
           {

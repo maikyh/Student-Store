@@ -37,5 +37,12 @@
     width: 550px;
     margin-left: auto;
     margin-right: auto;
+    overflow-y: auto;
+    max-height: calc(100vh - 40px);
     transition: opacity 0.3s ease; 
+}
+
+.table-container::-webkit-scrollbar {
+    width: 0;
+    background-color: transparent;
 }
