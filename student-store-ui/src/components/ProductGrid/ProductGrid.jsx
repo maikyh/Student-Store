@@ -3,7 +3,7 @@ import ProductCard from "../ProductCard/ProductCard";
 import Sidebar from "../Sidebar/Sidebar";
 import "./ProductGrid.css";
 
-const url = `https://codepath-store-api.herokuapp.com/store`;
+const url = `http://localhost:3001/store`;
 
 export default function ProductGrid({ selectedCategory, searchQuery }) {
   const [products, setProducts] = useState([]);
