@@ -43,7 +43,7 @@ class Store {
                 order: shoppingCart,
                 total,
                 createdAt: new Date().toString(),
-                receipt: `Receipt #${storage.get("purchases").value().length + 1}: User: ${user.name}. Total price: $${(total).toFixed(2)}`
+                receipt: `Receipt #${storage.get("purchases").value().length + 1}: User: ${user.name}. Total: $${total.toFixed(2)}`
             }
 
             storage.get("purchases").push(purchase).write();

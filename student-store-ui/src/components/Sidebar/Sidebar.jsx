@@ -84,7 +84,7 @@ export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
     );
   }
 
-  const handleSetCheckout = (event) => {
+  const handleSetCheckout = async (event) => {
     event.preventDefault();
     if(productsOnShoppingCart.length > 0 && searchName.length > 0 && searchEmail.length > 0){
       const updatedCheckoutAPI = {
@@ -99,6 +99,25 @@ export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
       };
   
       setCheckoutAPI(updatedCheckoutAPI);
+      
+      try {
+        const response = await fetch('http://localhost:3001/store', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(updatedCheckoutAPI)
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          console.log(data);
+        } else {
+          console.log('Request failed with status:', response.status);
+        }
+      } catch (error) {
+        console.error(error);
+      }
       
       setCheckout({searchName, searchEmail, productsOnShoppingCart});
       setStatusOfPayment(true);
