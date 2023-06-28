@@ -23,6 +23,7 @@ export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
   };
 
   const tableRows = [];
+  const productsOnShoppingCart = [];
   let subTotal = 0;
   let tax = 0;
   let total = 0;
@@ -32,6 +33,8 @@ export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
       const quantity = shoppingCart[i];
       const itemSubtotal = product.price * quantity;
       subTotal += itemSubtotal;
+      
+      productsOnShoppingCart.push([quantity,product.name,product.price,itemSubtotal]);
 
       tableRows.push(
         <tr key={i}>
@@ -79,7 +82,7 @@ export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
 
   const handleSetCheckout = (event) => {
     event.preventDefault();
-    setCheckout({searchName, searchEmail, shoppingCart});
+    setCheckout({searchName, searchEmail, productsOnShoppingCart});
     setStatusOfPayment(true);
     handleClearShoppingCart();
     setSearchName("");
@@ -92,7 +95,7 @@ export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
     setStatusOfPayment(false);
   }
 
-  console.log(statusOfPayment)
+  console.log(checkout)
 
   return (
     <div className={`sidebar ${expanded ? 'expanded' : ''}`}>
@@ -142,7 +145,12 @@ export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
             statusOfPayment && 
             <div>
               <h4 className='text-white'>Receipt</h4>
-              <p className='text-white'>Showing receipt for {checkout.searchName} available at {checkout.searchEmail}:</p>
+              <p className='text-white mb-1'>Showing receipt for {checkout.searchName} available at {checkout.searchEmail}:</p>
+              {checkout.productsOnShoppingCart?.map((product) => (
+                <ul className="m-0">
+                  <li className='text-white'> {product[0]} {product[1]} purchased at a cost of ${product[2]} for a total cost of ${product[3]}.</li>
+                </ul>
+              ))}
               <button onClick={handleExit} type="submit" class="btn btn-outline-success mt-3 text-white border-white">Continue</button>
             </div>
           }
