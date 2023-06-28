@@ -1,10 +1,11 @@
 import React from "react";
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Home from "../Home/Home";
+import OrderHome from "../OrderHome/OrderHome";
 import Footer from "../Footer/Footer";
 import "./App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {
   return (
@@ -12,8 +13,11 @@ export default function App() {
       <BrowserRouter>
         <main>
           <Navbar />
-          <Home />
-          <Footer/>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/orders" element={<OrderHome />} />
+          </Routes>
+          <Footer />
         </main>
       </BrowserRouter>
     </div>
