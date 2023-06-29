@@ -578,6 +578,24 @@
       "total": 1.6312499999999999,
       "createdAt": "Wed Jun 28 2023 16:23:39 GMT-0700 (Pacific Daylight Time)",
       "receipt": "Receipt #32: User: mikey. Total: $1.63"
+    },
+    {
+      "id": 33,
+      "name": "Carlos",
+      "email": "cdamezcua@gmail.com",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 1
+        },
+        {
+          "itemId": 7,
+          "quantity": 1
+        }
+      ],
+      "total": 8.67825,
+      "createdAt": "Thu Jun 29 2023 10:08:26 GMT-0700 (Pacific Daylight Time)",
+      "receipt": "Receipt #33: User: Carlos. Total: $8.68"
     }
   ]
 }

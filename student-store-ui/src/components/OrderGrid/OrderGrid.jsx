@@ -23,15 +23,17 @@ export default function ProductGrid({ searchQuery }) {
 
   let currentOrders = orders;
 
-  console.log(currentOrders);
-
   let selectedProductId = false;
   
+  console.log(currentOrders);
+
+  /*
   if (searchQuery) {
     currentOrders = currentOrders.filter((product) =>
       product.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
   }
+  */
 
   return (
     <div>
