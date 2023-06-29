@@ -21,11 +21,11 @@ export default function ProductGrid({ searchQuery }) {
     fetchData();
   }, []);
 
-  let currentOrders = orders;
-
-  let selectedProductId = false;
+  let currentOrders = [...orders].sort((a, b) => b.id - a.id); // Sort by ID in descending order
   
   console.log(currentOrders);
+
+  let selectedProductId = false;
 
   /*
   if (searchQuery) {
@@ -37,7 +37,7 @@ export default function ProductGrid({ searchQuery }) {
 
   return (
     <div>
-      <div className="container product-grid">
+      <div className="container order-grid">
         {!selectedProductId && (
           <div className="row justify-content-start">
             {currentOrders?.map((order) => (
