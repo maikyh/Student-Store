@@ -57,6 +57,28 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [x] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [x] Users can click on the "Most Expensive" category to view all products sorted by price in descending order.
 
+## *Week 3* Reflection
+
+- Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
+
+As same as last week answer, Lab 1 (Gift Giver) was the one that helped me the most. It taught me how to use Express, which was completely new to me. In the first two weeks, I already had some basic knowledge of HTML, CSS, JS, and React, but working with Express was something completely different. The lesson on Express from CodePath was super helpful. It covered what Express is, how to use it, and how to implement it in JS. During the Gift Giver project, I learned how and why to call the routes and even used Postman to make sure everything was working fine. I also got the hang of terms like 'get' and 'post' and how to use them in JS to manage my own database. This lab was crucial in bringing the backend to life for my weekly project (Student Store, Part II), especially when it came to managing all the orders. I could add orders to the database using 'post' and retrieve past and individual orders using 'get' requests.
+
+- If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
+  
+If I had more time, I would add four minimal yet highly functional features to my project:
+
+Firstly, I would add some animations whenever the user click on expanding button to make a smoother User Experience, this transition would also be implemented whenever the user decided to collapse the sidebar.
+
+Secondly, I would include a button in the shopping cart that, when clicked, instantly clears all previously added products. This would be convenient for users who have an expanded sidebar and want to remove all items at once.
+
+Thirdly, I would implement a popup notification that appears in the bottom right corner whenever a product is added to the shopping cart. The popup would display a message like "Product added" and show an image of the other products already in the cart. It would provide a visual confirmation without including details such as price, total, subtotal, or taxes, focusing solely on the products and quantities.
+
+Lastly, I would reintroduce the "Most Expensive" category as a filtering option within each component. This filter would allow users to view products within a specific category (e.g., tech) but sorted by their price in either ascending or descending order. It would provide an additional way for users to explore and compare products based on their prices.
+
+- Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+
+I was amazed by the project I could create in just 2 weeks. Time flew by, and I didn't even realize I had made over 100 commits. I couldn't wait to start the capstone project and see what I would be capable of achieving. This week was a completely new experience for me because I had no prior knowledge of the technology. However, this challenge helped me a lot in terms of searching for information, finding resources, and applying them. I became a **fast learner** and within a week, I gained a solid understanding of the technology, allowing me to implement it in last week's project and continue with the backend part. In future projects, I will allocate some time to establish a clear project structure. This will make it easier to manage as the code grows longer, this will ensure better code quality and make it more understandable for anyone who would like to contribute to the project or just for giving it a view.
+
 ## *Week 2* Reflection
 
 - Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
