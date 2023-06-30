@@ -24,7 +24,7 @@ const OrderSearch = ({ onSearchQueryChange }) => {
               <input
                 className="form-control"
                 type="text"
-                placeholder="Search..."
+                placeholder="Email..."
                 aria-label="Search"
                 onChange={handleSearch}
                 value={searchQuery}

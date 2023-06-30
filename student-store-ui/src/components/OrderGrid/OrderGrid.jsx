@@ -23,22 +23,15 @@ export default function ProductGrid({ searchQuery }) {
 
   let currentOrders = [...orders].sort((a, b) => b.id - a.id); // Sort by ID in descending order
   
-  console.log(currentOrders);
-
-  let selectedProductId = false;
-
-  /*
   if (searchQuery) {
-    currentOrders = currentOrders.filter((product) =>
-      product.name.toLowerCase().includes(searchQuery.toLowerCase())
+    currentOrders = currentOrders.filter((order) =>
+      order.email?.toLowerCase().includes(searchQuery.toLowerCase())
     );
   }
-  */
 
   return (
     <div>
       <div className="container order-grid">
-        {!selectedProductId && (
           <div className="row justify-content-start">
             {currentOrders?.map((order) => (
               <div className="col-md-3" key={order.id}>
@@ -46,19 +39,6 @@ export default function ProductGrid({ searchQuery }) {
               </div>
             ))}
           </div>
-        )}
-
-        {selectedProductId && (
-          <div className="row justify-content-center">
-            <div className="col-md-6">
-              <OrderCard
-                product={products.find((product) => product.id === selectedProductId)}
-                onClose={handleProductClose}
-                largeView
-                />
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );
