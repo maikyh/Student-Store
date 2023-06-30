@@ -29,6 +29,8 @@ export default function ProductGrid({ searchQuery }) {
     );
   }
 
+  console.log(orders);
+
   return (
     <div>
       <div className="container order-grid">

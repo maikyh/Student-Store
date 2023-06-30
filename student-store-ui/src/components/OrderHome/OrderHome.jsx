@@ -13,8 +13,6 @@ export default function Home() {
     setSearchQuery(query);
   };
 
-  console.log(searchQuery);
-
   return (
     <div className="home">
       <Hero />

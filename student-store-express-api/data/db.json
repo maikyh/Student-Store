@@ -674,6 +674,98 @@
       "total": 119.62499999999999,
       "createdAt": "Thu Jun 29 2023 17:17:37 GMT-0700 (Pacific Daylight Time)",
       "receipt": "Receipt #38: User: tim. Total: $119.62"
+    },
+    {
+      "id": 39,
+      "name": "Juan",
+      "email": "juan@meta.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        },
+        {
+          "itemId": 4,
+          "quantity": 1
+        }
+      ],
+      "total": 9.493875,
+      "createdAt": "Thu Jun 29 2023 17:37:35 GMT-0700 (Pacific Daylight Time)",
+      "receipt": "Receipt #39: User: Juan. Total: $9.49"
+    },
+    {
+      "id": 40,
+      "name": "maiky",
+      "email": "maiky@meta.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        },
+        {
+          "itemId": 4,
+          "quantity": 1
+        }
+      ],
+      "total": 9.493875,
+      "createdAt": "Thu Jun 29 2023 18:53:51 GMT-0700 (Pacific Daylight Time)",
+      "receipt": "Receipt #40: User: maiky. Total: $9.49"
+    },
+    {
+      "id": 41,
+      "name": "mikey",
+      "email": "mikey@meta.com",
+      "order": [
+        {
+          "itemId": 13,
+          "quantity": 1
+        },
+        {
+          "itemId": 14,
+          "quantity": 1
+        },
+        {
+          "itemId": 15,
+          "quantity": 1
+        },
+        {
+          "itemId": 16,
+          "quantity": 1
+        }
+      ],
+      "total": 1304.967375,
+      "createdAt": "Thu Jun 29 2023 18:55:49 GMT-0700 (Pacific Daylight Time)",
+      "receipt": "Receipt #41: User: mikey. Total: $1304.97"
+    },
+    {
+      "id": 42,
+      "name": "Jose",
+      "email": "jose@meta.com",
+      "order": [
+        {
+          "itemId": 11,
+          "quantity": 1
+        }
+      ],
+      "total": 217.49999999999997,
+      "createdAt": "Thu Jun 29 2023 19:04:09 GMT-0700 (Pacific Daylight Time)",
+      "receipt": "Receipt #42: User: Jose. Total: $217.50"
     }
   ]
 }
