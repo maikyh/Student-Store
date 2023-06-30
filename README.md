@@ -16,7 +16,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - Add several products to the shopping cart.
 - Checkout and view the final receipt.
 
-### Walkthrough Video
+### *Week 2* Walkthrough Video
 
 <a href="https://www.loom.com/share/e374760a3e7947b8b1cee607237dc360">
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/e374760a3e7947b8b1cee607237dc360-with-play.gif">
@@ -57,7 +57,7 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - [x] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
 - [x] Users can click on the "Most Expensive" category to view all products sorted by price in descending order.
 
-## Reflection
+## *Week 2* Reflection
 
 - Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
