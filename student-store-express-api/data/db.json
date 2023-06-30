@@ -660,6 +660,20 @@
       "total": 538.269,
       "createdAt": "Thu Jun 29 2023 16:42:06 GMT-0700 (Pacific Daylight Time)",
       "receipt": "Receipt #37: User: Fer. Total: $538.27"
+    },
+    {
+      "id": 38,
+      "name": "tim",
+      "email": "tim@meta.com",
+      "order": [
+        {
+          "itemId": 14,
+          "quantity": 1
+        }
+      ],
+      "total": 119.62499999999999,
+      "createdAt": "Thu Jun 29 2023 17:17:37 GMT-0700 (Pacific Daylight Time)",
+      "receipt": "Receipt #38: User: tim. Total: $119.62"
     }
   ]
 }
