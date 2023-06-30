@@ -8,33 +8,32 @@ import Contact from "../Contact/Contact";
 const url = `http://localhost:3001/orders`;
 
 const OrderDetails = () => {
-    const { id } = useParams();
+  const [order, setOrder] = useState([]);
+  const { id } = useParams();
     
-    const [orders, setOrders] = useState([]);
-    useEffect(() => {
-        const fetchData = async () => {
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-            setOrders(data.products);
-        } catch (error) {
-            console.error("Error fetching data:", error);
-        }
-        };
-        fetchData();
-    }, []);
+  useEffect(() => {
+      const fetchData = async () => {
+      try {
+          const response = await fetch(url + `/${id}`);
+          const data = await response.json();
+          setOrder(data);
+      } catch (error) {
+          console.error("Error fetching data:", error);
+      }
+      };
+      fetchData();
+  }, []);
 
-    const order = orders.find((order) => order.id === parseInt(id));
-    console.log(order);
+  console.log(order);
 
-    return (    
-      <div className="">
-        <Hero />
-        <h1>Order Details - ID: {id}</h1>
-        <About />
-        <Contact />
-      </div>
-    );
+  return (    
+    <div className="">
+      <Hero />
+      <h1>Order Details - ID: {id}</h1>
+      <About />
+      <Contact />
+    </div>
+  );
   };
   
 
