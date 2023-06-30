@@ -13,6 +13,8 @@ const OrderDetails = () => {
   const [products, setProducts] = useState([]);
   const [order, setOrder] = useState([]);
   const { id } = useParams();
+  const [isLoadingProducts, setIsLoadingProducts] = useState(true);
+  const [isLoadingOrder, setIsLoadingOrder] = useState(true);
 
   useEffect(() => {
     const fetchDataProducts = async () => {
@@ -22,26 +24,29 @@ const OrderDetails = () => {
         setProducts(data.products);
       } catch (error) {
         console.error("Error fetching data:", error);
+      } finally {
+        setIsLoadingProducts(false);
       }
     };
 
     const fetchDataOrder = async () => {
       try {
-          const response = await fetch(urlOrders + `/${id}`);
-          const data = await response.json();
-          setOrder(data.product);
+        const response = await fetch(urlOrders + `/${id}`);
+        const data = await response.json();
+        setOrder(data.product);
       } catch (error) {
-          console.error("Error fetching data:", error);
+        console.error("Error fetching data:", error);
+      } finally {
+        setIsLoadingOrder(false);
       }
     };
+
     fetchDataProducts();
     fetchDataOrder();
   }, []);
 
-  console.log(order);
-
   const tableRows = [];
-  if(order.order){
+  if(!isLoadingProducts && !isLoadingOrder){
     let subTotal = 0;
     let tax = 0;
     let total = 0;
@@ -94,7 +99,6 @@ const OrderDetails = () => {
         </tr>
       );
     }
-    
   }
 
   return (    
@@ -103,8 +107,8 @@ const OrderDetails = () => {
       {
         tableRows.length > 1 && 
         <div>
-          <h2 className='text-center my-2' >Receipt #{id}</h2>
-          <table className="table table-striped mt-3 container order-grid">
+          <h2 className="text-center my-2">Receipt #{id}</h2>
+          <table className="table table-striped mt-3 container order-grid table-bordered">
             <thead className="thead-dark">
               <tr>
                 <th>Product</th>
@@ -114,12 +118,12 @@ const OrderDetails = () => {
               </tr>
             </thead>
             <tbody>{tableRows}</tbody>
-            </table>
-            <div className="text-center">
-              <Link to={`/orders`} className="btn btn-warning mt-0">
-                Go Back
-              </Link>
-            </div>
+          </table>
+          <div className="text-center">
+            <Link to={`/orders`} className="btn btn-warning mt-0">
+              Go Back
+            </Link>
+          </div>
         </div>
       }
       <About />
