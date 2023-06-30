@@ -1,8 +1,8 @@
-## Week 2 Assignment: Student Store Project
+## Week 2-3 Assignment: Student Store Project
 
 Submitted by: **Miguel Angel Garza Carranza - maiky@meta.com**
 
-Estimated time spent: **13** hours spent in total
+Estimated time spent: **20** hours spent in total
 
 ### About
 
@@ -21,6 +21,23 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 <a href="https://www.loom.com/share/e374760a3e7947b8b1cee607237dc360">
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/e374760a3e7947b8b1cee607237dc360-with-play.gif">
 </a>
+
+## *Week 3* Application Features
+
+### Core Features
+
+- [x] Users can click to expand the shopping cart in the left navigation.
+- [x] Users can click the '+' button on a product cart to increment that product in the shopping cart.
+- [x] Users can click the '-' button on a product cart to decrement that product in the shopping cart.
+- [x] The shopping cart displays a table of products, quantities, subtotal, tax, and total.
+- [x] Users can checkout, and receive a receipt confirming their purchase.
+
+### Stretch Features
+
+- [x] Create an endpoint for fetching all orders in the database and an endpoint for serving an individual order based on its ID.
+- [x] Build a page in the UI that displays the list of all past orders. The user should be able to click on any individual order to take them to a more detailed page of the transaction.
+- [x] Allow users to use an input to filter orders by the email of the person who placed the order.
+- [x] When users click on any individual receipt, they will see the same shopping cart table they had when they confirmed the purchase.
 
 ## *Week 2* Application Features
 
