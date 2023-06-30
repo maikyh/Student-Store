@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import './Sidebar.css';
 
 export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
@@ -188,6 +189,12 @@ export function Sidebar({ handleClearShoppingCart, products, shoppingCart }) {
             !statusOfPayment &&
             <p className='text-white'>A confirmation email will be sent to you so that you can confirm this order. Once you have confirmed the order, it will be delivered to your dorm room.</p>
           }
+
+          <div className='text-center mt-5'>
+            <Link to={`/orders`} className="btn btn-danger mt-0">
+              View Past Orders 
+            </Link>
+          </div>
         </div>
       )}
     </div>
